@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Countdown to...</title>
+</head>
+<body>
+
+<strong>Counting to 31/12/2019</strong>
+<br>
+<div id="counting"> ...loading</div>
+
+<script src="countdown.js"></script>
+
+<script>
+    var place = document.getElementById("counting");
+
+    var int = setInterval(function(){
+        var date = "12/31/2019";
+        var format = "point"; 
+        place.innerHTML = countingDays(date, format);
+    }, 1000); //mise a jour a chaque 1s
+
+    /*on peut utilizer les formats suivants:
+        point -> 00:00:00:00
+        en -> 00 days, 00 hours, 00 minutes, 00 seconds
+        fr -> 00 jours, 00 heures, 00 minutes, 00 secondes
+    */
+
+
+</script>
+
+
+</body>
+</html>
