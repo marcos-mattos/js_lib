@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index de teste</title>
+</head>
+<body>
+
+<div id="counting">0</div>
+
+<hr>
+
+<button id="add"> ajouter un </button>
+<button id="rem"> reduire un </button>
+
+<script src="counter.js"></script>
+
+<script>
+    let local = document.getElementById("counting");
+
+    function execute(a){
+        if(a > 0){
+            counter.add();
+        }else{
+            counter.del();            
+        }
+        local.innerHTML = counter.show();
+    }
+
+    document.getElementById("add").addEventListener("click", function(){execute(1)});
+    document.getElementById("rem").addEventListener("click", function(){execute(0)});
+
+
+</script>
+
+</body>
+</html>
