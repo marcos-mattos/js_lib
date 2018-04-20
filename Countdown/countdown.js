@@ -7,29 +7,29 @@ function countingDays(a, format = "point"){
     let dias = tempoRestante/86400000; //les jours en restant comme nombre, float
     let _dias = parseInt(dias); //les jours en restant -> comme nombre entier
 
+    let sobraDias = (dias - _dias) * 24; //nombre en résultant de la soustraction parmi les jours, multiplié le 24 heures du jour
+    let _sobraDias = parseInt(sobraDias); //on prend les heures du jour et faire devenir dans un nombre entier    
+
+    let minutos = (sobraDias - _sobraDias) * 60; //en prenant la soustraction des heures et multipliant par 60
+    let _minutos = parseInt(minutos); // faire devenir un nombre entier
+
+    let segundos = (minutos - _minutos) * 60; //on prend les minutes en restant e les multiplie par 60
+    let _segundos = parseInt(segundos); // faire devenir un nombre entier
+
     //en ajoutant 0 si le nombre sera moins que 10
     if(_dias < 10){
         _dias = "0" + _dias;
-    }
+    }    
 
-    let sobraDias = (dias - _dias) * 24; //nombre en résultant de la soustraction parmi les jours, multiplié le 24 heures du jour
-    let _sobraDias = parseInt(sobraDias); //on prend les heures du jour et faire devenir dans un nombre entier
-    
     //en ajoutant 0 si le nombre sera moins que 10  
     if(_sobraDias < 10){
         _sobraDias = "0" + _sobraDias;
     }
 
-    let minutos = (sobraDias - _sobraDias) * 60; //en prenant la soustraction des heures et multipliant par 60
-    let _minutos = parseInt(minutos); // faire devenir un nombre entier
-
     //en ajoutant 0 si le nombre sera moins que 10
     if(_minutos < 10){
         _minutos = "0" + _minutos;
-    }
-
-    let segundos = (minutos - _minutos) * 60; //on prend les minutes en restant e les multiplie par 60
-    let _segundos = parseInt(segundos); // faire devenir un nombre entier
+    }    
 
     //en ajoutant 0 si le nombre sera moins que 10
     if(_segundos < 10){
@@ -62,7 +62,5 @@ function countingDays(a, format = "point"){
     else{
         return `${_dias}:${_sobraDias}:${_minutos}:${_segundos}`;        
     }
-
-
 
 }
